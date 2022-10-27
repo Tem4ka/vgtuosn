@@ -1,12 +1,12 @@
 #define _CRT_SECURE_NO_DEPRECATE
 #include <stdio.h>
 #include <locale.h>
-int posled(a, b) {
-	int s1;
+float posled(float a, float b) {
+	float s1;
 	s1 = a + b;
 	return s1;
 }
-float parralel(float a,float b) {
+float paralel(float a,float b) {
 	float s2;	
 	s2 = (a * b) / (a + b);
 	return s2;
@@ -14,17 +14,16 @@ float parralel(float a,float b) {
 int main()
 {
 	setlocale(LC_ALL, "RUS");
-	int a, b;
-	int s1;
-	float s2;
+	float a, b, s1, s2;
+
 	printf("Введите сопротивление первого резистора: ");
-	scanf("%d", &a);
+	scanf("%f", &a);
 	printf("\nВведите сопротивление второго резистора: ");
-	scanf("%d", &b);
+	scanf("%f", &b);
 	
 	s1 = posled(a, b);
-	printf("\nСопротивление двух последовательно соединенных резисторов: %d", s1);
+	printf("\nСопротивление двух последовательно соединенных резисторов: %f", s1);
 
-	s2 = parralel(a, b);
-	printf("\nСопротивление двух параллельно соединенных резисторов: %f", (float)s2);
+	s2 = paralel(a, b);
+	printf("\nСопротивление двух параллельно соединенных резисторов: %f", s2);
 }
